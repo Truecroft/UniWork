@@ -1,18 +1,14 @@
 package week2.library.model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Book {
-	public static void main(String[] args) {
-		setPrice("10");
-		setTitle("TestBook");
-		addAuthors();
-		getBook();
-	}
 	private static String title;
 	private static String authors[] = new String[5];
 	private static String price;
+	public static ArrayList<String[]> books = new ArrayList<String[]>();
 	
 	public String getTitle() {
 		return title;
@@ -41,6 +37,15 @@ public class Book {
 			authors[newAuthor] = input.next();
 		}
 		input.close();
+	}
+	
+	public static void addBook(String[] bookToAdd) {
+		books.add(bookToAdd);
+		
+	}
+	
+	public static ArrayList<String[]> getBooks(){
+		return books;
 	}
 	
 	public static void getBook() {

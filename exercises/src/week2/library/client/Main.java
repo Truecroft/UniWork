@@ -1,4 +1,6 @@
-package week2.library;
+package week2.library.client;
+
+import week2.library.model.*;
 
 public class Main {
 

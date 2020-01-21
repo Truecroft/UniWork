@@ -10,9 +10,9 @@ public class Book {
 		addAuthors();
 		getBook();
 	}
-	private String title;
-	private String authors[] = new String[5];
-	private String price;
+	private static String title;
+	private static String authors[] = new String[5];
+	private static String price;
 	
 	public String getTitle() {
 		return title;
@@ -26,25 +26,24 @@ public class Book {
 		return price;
 	}
 	
-	public void setTitle(String newTitle) {
-		this.title = newTitle;
+	public static void setTitle(String newTitle) {
+		title = newTitle;
 	}
 	
-	public void setPrice(String newPrice) {
-		this.price = newPrice;
+	public static void setPrice(String newPrice) {
+		price = newPrice;
 	}
 	
-	public void addAuthors() {
+	public static void addAuthors() {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Please enter an author");
 		for (int newAuthor = 0; newAuthor < 5; newAuthor++) {
 			authors[newAuthor] = input.next();
 		}
-		System.out.println(Arrays.toString(authors));
 		input.close();
 	}
 	
-	public void getBook() {
+	public static void getBook() {
 		String author1 = authors[0];
 		String author2 = authors[1];
 		String author3 = authors[2];
@@ -52,7 +51,7 @@ public class Book {
 		String author5 = authors[4];
 		
 		String[] book = new String[] {title, author1, author2, author3, author4, author5, price};
-		System.out.println(book);
+		System.out.println("Book: " + Arrays.toString(book));
 		
 	}
 }

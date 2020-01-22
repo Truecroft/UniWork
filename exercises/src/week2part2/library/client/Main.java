@@ -1,9 +1,9 @@
-package week2.library.client;
+package week2part2.library.client;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import week2.library.model.*;
+import week2part2.library.model.*;
 
 public class Main {
 

@@ -1,1 +1,1 @@
-package week2.library.model;
+package week2part1.library.model;

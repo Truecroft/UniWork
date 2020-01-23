@@ -14,12 +14,12 @@ public class MyFileReader {
 		
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws BadLineException, IOException {
 		File file = new File("D:\\Degree\\OOP\\UniWork\\exercises\\src\\week2part3\\TestReadFile");
 		File file2 = new File ("D:\\Degree\\OOP\\UniWork\\exercises\\src\\week2part3\\TestWriteFile");
-		readAndPrint(file);
-		writeMyFile(file2);
-		readAndPrint(file2);
+		//readAndPrint(file);
+		//writeMyFile(file2);
+		readMyFile(file2);
 	}
 	
 	public static void readAndPrint(File file) {
@@ -44,22 +44,24 @@ public class MyFileReader {
 			catch (IOException e) {	System.out.println("Could not write to file: " + file2.toString());	}
 	}
 	
-	public static void readMyFile(File file) throws BadLineException {
-		try {
+	public static void readMyFile(File file) throws BadLineException, IOException {
 			FileReader fileReader = new FileReader(file);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
+//			try {
 			String line;
 			while ((line = bufferedReader.readLine()) != null) {
-				if (line.startsWith("This is line: ")) {
-					System.out.println(line);
+				if (!line.startsWith("This is line: ")) {
+					throw new BadLineException("The line does not start with 'This is line: '", line);
 				}
 				else {
-					throw new BadLineException("The line does not start with 'This is line: '", line);
-				}			
-		}
-		}
-		finally {
-			BufferedReader.close();
-		}
+					System.out.println(line);
+				}
+			
+			}
+			bufferedReader.close();
+//			finally {
+//				System.out.println("File read complete.");
+//			}
+//		}
 	}
 }

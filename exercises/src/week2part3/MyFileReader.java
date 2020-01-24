@@ -39,7 +39,7 @@ public class MyFileReader {
 		try {
 			FileWriter fileWrite = new FileWriter(file2);
 			BufferedWriter bufferedWriter = new BufferedWriter(fileWrite);
-			for (int i=0; i<=100; i++) { bufferedWriter.append(i + "\n"); } 
+			for (int i=0; i<=100; i++) { bufferedWriter.append(String.valueOf(i)).append("\n"); }
 			bufferedWriter.close();
 		} 
 			catch (IOException e) {	System.out.println("Could not write to file: " + file2.toString());	}
@@ -47,16 +47,15 @@ public class MyFileReader {
 	
 	public static void readMyFile(File file) throws BadLineException, IOException {
 			FileReader fileReader = new FileReader(file);
-			BufferedReader bufferedReader = new BufferedReader(fileReader);
-			try {
-				String line;
-				while ((line = bufferedReader.readLine()) != null) {
-					if (!line.startsWith("This is line: ")) { throw new BadLineException("The line: " + line + " does not start with 'This is line: '"); }
-					else { System.out.println(line); }			
+		try (BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+			String line;
+			while ((line = bufferedReader.readLine()) != null) {
+				if (!line.startsWith("This is line: ")) {
+					throw new BadLineException("The line: " + line + " does not start with 'This is line: '");
+				} else {
+					System.out.println(line);
 				}
 			}
-			finally {
-				bufferedReader.close();
-			}
+		}
 	}
 }

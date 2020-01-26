@@ -10,6 +10,18 @@ public class RacingCar extends Car {
 	}
 	
 	private int turboFactor ;
+
+	@Override
+	public void accelerate(int seconds) {
+		int increase = 5 * seconds * turboFactor;
+		setSpeed(getSpeed() + increase);
+	}
+
+	@Override
+	public String getModel() {
+		return "Formula 1 " + super.getModel();
+	}
+
 	public int getTurboFactor() {
 		return turboFactor;
 	}
@@ -20,7 +32,7 @@ public class RacingCar extends Car {
    
 	public RacingCar(String model, String driver, int turboFactor)
     {
-		//??
+		super(model);
         setDriver(driver);
         setTurboFactor(turboFactor);
     }

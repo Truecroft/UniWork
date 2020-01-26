@@ -19,7 +19,7 @@ public class Car {
 		this.model = model;
 	}
 
-	//public Car(String m) { setModel(m); }
+	public Car(String m) { setModel(m); }
 
     public void getToSixty() {
         setSpeed(60);

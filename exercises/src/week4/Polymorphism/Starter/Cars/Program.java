@@ -27,8 +27,6 @@ public class Program {
 			if (c instanceof  RacingCar){
 				System.out.printf("The Driver is: %s\n", ((RacingCar) c).getDriver());
 			}
-// Got to Number 11 of polymorphism end of chapter exercises.
-
 		}
 	}
 }

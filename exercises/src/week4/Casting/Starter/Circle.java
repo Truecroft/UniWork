@@ -39,6 +39,10 @@ class Circle extends Shape
         System.out.printf("Diameter:      %f\n", getDiameter());
         System.out.printf("Circumference: %7.2f\n", getCircumference());
         System.out.printf("Area:          %7.2f\n", getArea());
+
+        if (getClassNameOnly().equals("Circle")){
+            System.out.println();
+        }
     }
 
     

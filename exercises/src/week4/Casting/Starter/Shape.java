@@ -19,10 +19,20 @@ public class Shape {
 	public void setColour(Color colour) { this.colour = colour; }
 
 	public void printCharacteristics(){
-    	System.out.printf("This is a: %s\n", getClass());
+    	System.out.printf("This is a: %s\n", getClassNameOnly());
     	System.out.printf("Colour: %s\n", getColour());
     	System.out.printf("Position: %s\n", getPosition());
 
+		if (getClassNameOnly().equals("Shape")){
+			System.out.println();
+		}
+
+	}
+	
+	public String getClassNameOnly(){
+    	String fullName = this.getClass().getName();
+    	String[] parts = fullName.split("\\.");
+    	return parts[parts.length - 1];
 	}
 
     

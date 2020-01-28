@@ -26,6 +26,18 @@ public class Program {
              System.out.println();
          }
 
+         for (Shape shape : shapes) {
+             printArea(shape);
+         }
 	}
+    public static void printArea(Shape shape){
+        if (shape instanceof Circle){
+            Circle circle = (Circle)shape;
+            System.out.printf("The area of the %s is %7.2f\n", circle.getClassNameOnly(), circle.getArea());
+        }
+        else{
+            System.out.println("This shape is not a circle");
+        }
+    }
 
 }

@@ -5,7 +5,7 @@ public class Program {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Object[] things = { new Penguin("Pingu") ,new Duck("Donald") ,new Fish("Freddie")};
+		Object[] things = { new Penguin("Pingu") , new Duck("Donald") ,new Fish("Freddie")};
 
 		System.out.println("### These are Consumable ###");
 

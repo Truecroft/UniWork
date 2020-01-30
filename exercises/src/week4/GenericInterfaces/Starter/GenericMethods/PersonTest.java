@@ -17,6 +17,7 @@ public class PersonTest {
 		print(people);
 
 		// Sort by age based on implementation of Comparable<E>
+		Arrays.sort(people);
 		
 				
 		System.out.println("\nThe sorted list of people by AGE is:\n");

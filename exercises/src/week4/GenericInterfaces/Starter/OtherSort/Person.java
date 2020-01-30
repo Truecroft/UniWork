@@ -25,5 +25,10 @@ public class Person implements Comparable<Person> {
     public int compareTo(Person other) {
         return this.getAge() - other.getAge();
     }
-    
+    public static final Comparator<Person> ByName = new PersonNameComparer();
+    private static class PersonNameComparer implements Comparator<Person> {
+        public int compare(Person person1, Person person2) { return person1.getName().compareTo(person2.getName()); }
+
+    }
+
 }

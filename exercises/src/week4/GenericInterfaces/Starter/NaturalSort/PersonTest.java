@@ -17,20 +17,21 @@ public class PersonTest {
 	                                  = new ArrayList<>();
 	private static ArrayList<String> nameList
 	                                  = new ArrayList<>();
-	private static ArrayList<Person> person;
+	private static ArrayList<Person> people;
 
 	
 
 	public static void main(String[] args) {
-		 
+
+
+		for (String name : names) { nameList.add(name); }
+		for (int age : ages) { ageList.add(age); }
+
+		people = new ArrayList<Person>(nameList.size());
 		
-		// write 2 quick loops
-		
-		
-		// instantiate the Person collection
-		
-		
-		// write a for loop to populate 'people' 
+		for (int i = 0; i < nameList.size(); i++){
+			people.add(new Person(nameList.get(i), ageList.get(i)));
+		}
 		
 		
 		
@@ -38,6 +39,7 @@ public class PersonTest {
 		printPeople();
 		
 		// sort the people
+		Collections.sort(people);
 		 
 		// by age based on implementation of Comparable<Person>
 		System.out.println("\nThe sorted list of people by AGE is:\n");
@@ -46,6 +48,8 @@ public class PersonTest {
 	}
 
 	private static void printPeople() {
-		
+		for (Person person : people) {
+			System.out.println(person);
+		}
 	}
 }

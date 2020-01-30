@@ -34,7 +34,7 @@ public class PersonTest {
 		printPeople();
 		
 		// call overloaded version of Collections.sort
-		
+		Collections.sort(people, Person.ByName);
 		
 		System.out.println("\nThe sorted list of people by NAME is:\n");
 		printPeople();

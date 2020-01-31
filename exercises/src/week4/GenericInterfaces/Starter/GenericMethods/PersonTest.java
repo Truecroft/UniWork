@@ -24,6 +24,7 @@ public class PersonTest {
 		print(people);
 		
 		// Sort by name based on implementation  of Comparator<E>
+		Arrays.sort(people, Person.ByName);
 		 
 											
 		System.out.println("\nThe sorted list of people by NAME is:\n");

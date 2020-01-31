@@ -1,27 +1,16 @@
 package week4.FourSidedMayhem;
 
 public class Point {
-    private static double x = 0;
-    private static double y = 0;
-    public static Point point = new Point(x, y);
-
-    public static void main(String[] args){
-        double yeet = distanceTo(new Point(4,4));
-        System.out.print(yeet);
+    private double x;
+    private double y;
+    public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
     }
-
-    public static double distanceTo(Point pointToTest) {
-        double test = ((pointToTest.getY() - point.getY()) * (pointToTest.getY() - point.getY()) + (pointToTest.getX() - point.getX() * (pointToTest.getX() - point.getX())));
-        return test;
+    public double distanceTo(Point pointToTest){
+        return (Math.sqrt((pointToTest.getY() - this.y) * (pointToTest.getY() - this.y) + (pointToTest.getX() - this.x * (pointToTest.getX() - this.x))));
     }
-    public Point(double xCoord, double yCoord){
-
-    }
-    public static double getX() {
-        return x;
-    }
-
-    public static double getY() {
-        return y;
-    }
+    public double getX(){ return this.x; }
+    public double getY() { return this.y; }
+    public String toString() { return String.format("X:%.2f Y:%.2f", this.x, this.y); }
 }

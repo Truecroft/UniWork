@@ -3,9 +3,6 @@ package shakespeareanInsultGenerator;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class SIG {
     private JPanel SIG;
@@ -42,15 +39,18 @@ public class SIG {
             public void actionPerformed(ActionEvent e) {
                 String value = (String) comboBox1.getSelectedItem();
                 String letter = Character.toString(value.charAt(0));
-                final List<String> values = new ArrayList<String>();
-                Collections.addAll(values, comboBox2Values);
+                comboBox2.removeAllItems();
+                comboBox3.removeAllItems();
                 for (String word : comboBox2Values){
-                    if (!word.startsWith(letter)){
-                        values.remove(word);
+                    if (word.startsWith(letter)){
+                        comboBox2.addItem(word);
                     }
                 }
-                comboBox2Values = values.toArray(new String[0]);
-                comboBox2 = new JComboBox<String>(comboBox2Values);
+                for (String word : comboBox3Values){
+                    if (word.startsWith(letter)){
+                        comboBox3.addItem(word);
+                    }
+                }
             }
         });
         generate.addActionListener(new ActionListener() {
@@ -73,7 +73,6 @@ public class SIG {
     }
 
     private void createUIComponents() {
-        // TODO: place custom component creation code here
         comboBox1 = new JComboBox<String>(comboBox1Values);
         comboBox3 = new JComboBox<String>(comboBox2Values);
         comboBox2 = new JComboBox<String>(comboBox3Values);

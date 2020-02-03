@@ -1,4 +1,4 @@
-package week4.FourSidedMayhem;
+package week4.FourSidedShapes;
 
 public class Line {
     public Point p1;

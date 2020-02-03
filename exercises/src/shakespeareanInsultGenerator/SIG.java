@@ -23,6 +23,7 @@ public class SIG {
             "no-good", "nutty", "onion-eyed", "over-zealous", "obsequious", "plume-plucked", "pottle-deep", "pox-marked", "quiffy", "quantabulous", "quadratic", "rectum-faced", "reeling-ripe", "rough-hewn", "rubber-headed", "rude-growing",
             "rudimantal", "rump-fed", "scum-sucking", "shard-borne", "sheep-biting", "silly old", "spur-galled", "swag-bellied", "tardy-gaited", "tickle-brained", "toad-spotted", "unbelieveable", "unctuos", "urchin-snouted", "vastly overated",
             "vertiginous", "weather-bitten", "yucky", "yellow"};
+
     private String[] comboBox3Values = {"apple-john", "anachronistic", "baggage", "barnacle", "bladder", "boar-pig", "bugbear", "bum-bailey", "canker-blossom", "clack-dish", "clotpole", "coxcomb", "codpiece", "death-token",
             "dewberry", "el weirdo", "eraser head", "flap-dragon", "flax-wench", "flirt-gill", "foot-licker", "fustilarian", "giglet", "gudgeon", "haggard", "harpy", "hedge-pig", "horn-beast", "hugger-mugger", "idiot droid",
             "impudent fool", "insufferable pratt", "jolthead", "khazi-droid", "krill", "lewdster", "lout", "maggot-pie", "malt-worm", "mammet", "measle", "minnow", "miscreant", "moldwarp", "mumble-news", "numbscull", "nut-hook",

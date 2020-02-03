@@ -3,6 +3,9 @@ package shakespeareanInsultGenerator;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class SIG {
     private JPanel SIG;
@@ -16,6 +19,7 @@ public class SIG {
             "impertinent", "infectious", "jarring", "kettle-headed", "krakatoic", "kahootic", "loggerheaded", "lumpish", "mammering", "mangled", "mewling", "nothing-headed",
             "numbscullistic", "nickel-hydrated", "novelty-headed", "opulent", "obnoxious", "over-wheening", "odourizing", "paunchy", "pribbling", "puking", "puny", "quailing",
             "rank", "reeky", "roguish", "ruttish", "saucy", "spleeny", "spongy", "surly", "tottering", "unmuzzled", "unquantifiable", "vain", "venomed", "villainous", "warped", "wayward", "weedy", "yeasty"};
+
     private String[] comboBox2Values = {"apologetic", "asinine", "base-court", "bat-fowling", "beef-witted", "beetle-headed", "boil-brained", "clapper-clawed", "clay-brained", "common-kissing", "crook-pated", "dismal-dreaming",
             "dizzy-eyed", "doghearted", "dread-bolted", "earth-vexing", "elf-skinned", "facile", "fat-kidneyed", "fen-sucked", "flap-mouthed", "fly-bitten", "folly-fallen", "fool-born", "full-gorged", "guts-griping", "half-faced",
             "hasty-witted", "hedge-born", "hell-hated", "idle-headed", "ill-breeding", "ill-nurtured", "jumped-up", "jammy", "juvenile", "knotty-pated", "lily-livered", "lowly", "little", "milk-livered", "motley-minded", "ninny faced",
@@ -38,12 +42,22 @@ public class SIG {
             public void actionPerformed(ActionEvent e) {
                 String value = (String) comboBox1.getSelectedItem();
                 String letter = Character.toString(value.charAt(0));
-                String[] words = new String[100];
+                final List<String> values = new ArrayList<String>();
+                Collections.addAll(values, comboBox2Values);
                 for (String word : comboBox2Values){
-                    if (word.startsWith(letter)){
-
+                    if (!word.startsWith(letter)){
+                        values.remove(word);
                     }
                 }
+                comboBox2Values = values.toArray(new String[0]);
+                comboBox2 = new JComboBox<String>(comboBox2Values);
+            }
+        });
+        generate.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String insult = comboBox1.getSelectedItem() + " " + comboBox2.getSelectedItem() + " " + comboBox3.getSelectedItem();
+                textField1.setText(insult);
             }
         });
     }
@@ -54,7 +68,6 @@ public class SIG {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-
 
 
     }
